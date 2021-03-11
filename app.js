@@ -91,6 +91,13 @@ app.post('/user/add',function(req,res,next){
     })
 })
 
+
+//delete route
+app.delete('/user/delete/:id',function(req,res,next){
+        client.del(req.params.id);
+        res.redirect('/')
+})  
+
 //port listening
 app.listen(port,function(){
     console.log('server started on port'+port);
